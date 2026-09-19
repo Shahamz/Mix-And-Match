@@ -1,0 +1,49 @@
+{
+  "prefix": "template_small",
+  "seed": 2025,
+  "cfg_scale": 4.5,
+  "num_crops": 2,
+  "tiles_per_crop": 2,
+  "background_prompt": "A beautiful desert oasis, surrounded by towering sand dunes under a blazing sun.",
+  "background_negative_prompt": "low quality, worst quality, over-saturated, blurry, deformed, watermark",
+  "tile_prompts": [
+    [
+      "A blindingly bright white sun",
+      "A hawk circling high in the thermals"
+    ],
+    [
+      "A perfectly clear blue pool of spring water",
+      "A golden sand dune with wind ripples"
+    ]
+  ],
+  "tile_negative_prompts": [
+    [
+      "low quality",
+      "low quality"
+    ],
+    [
+      "low quality",
+      "low quality"
+    ]
+  ],
+  "late_prompting": 2,
+  "crops": [
+    {
+      "x": 0,
+      "y": 0,
+      "width": 1024,
+      "height": 304
+    },
+    {
+      "x": 0,
+      "y": 304,
+      "width": 1024,
+      "height": 720
+    }
+  ],
+  "static_cropping": false,
+  "save_saliency_maps": false,
+  "sequential_cfg": false,
+  "visualize": false,
+  "save_separate_tiles": true
+}
