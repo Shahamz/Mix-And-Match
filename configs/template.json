@@ -1,0 +1,101 @@
+{
+  "prefix": "template",
+  "seed": 2025,
+  "cfg_scale": 4.5,
+  "num_crops": 4,
+  "tiles_per_crop": 5,
+  "background_prompt": "A beautiful desert oasis, surrounded by towering sand dunes under a blazing sun.",
+  "background_negative_prompt": "low quality, worst quality, over-saturated, blurry, deformed, watermark",
+  "tile_prompts": [
+    [
+      "A blindingly bright white sun",
+      "A hawk circling high in the thermals",
+      "A heat mirage shimmering in the distance",
+      "A single fluffy white cloud",
+      "A flock of migratory birds flying past"
+    ],
+    [
+      "A cluster of tall green date palm trees",
+      "A crumbling ancient stone archway",
+      "A bedouin tent pitched in the shade",
+      "A merchant leading a loaded camel",
+      "A large blooming green cactus"
+    ],
+    [
+      "A perfectly clear blue pool of spring water",
+      "A woman filling a clay jug at the water's edge",
+      "A group of flamingos wading in the shallows",
+      "A reflection of the palm trees on the water surface",
+      "A small wooden boat tied to a post"
+    ],
+    [
+      "A golden sand dune with wind ripples",
+      "A scorpion crawling across a rock",
+      "A snake slithering through the hot sand",
+      "An abandoned brass oil lamp half buried",
+      "A scattering of dry bleached animal bones"
+    ]
+  ],
+  "tile_negative_prompts": [
+    [
+      "low quality",
+      "low quality",
+      "low quality",
+      "low quality",
+      "low quality"
+    ],
+    [
+      "low quality",
+      "low quality",
+      "low quality",
+      "low quality",
+      "low quality"
+    ],
+    [
+      "low quality",
+      "low quality",
+      "low quality",
+      "low quality",
+      "low quality"
+    ],
+    [
+      "low quality",
+      "low quality",
+      "low quality",
+      "low quality",
+      "low quality"
+    ]
+  ],
+  "late_prompting": 2,
+  "crops": [
+    {
+      "x": 0,
+      "y": 0,
+      "width": 1024,
+      "height": 300
+    },
+    {
+      "x": 0,
+      "y": 300,
+      "width": 1024,
+      "height": 300
+    },
+    {
+      "x": 0,
+      "y": 600,
+      "width": 1024,
+      "height": 250
+    },
+    {
+      "x": 0,
+      "y": 850,
+      "width": 1024,
+      "height": 174
+    }
+  ],
+  "static_cropping": false,
+  "save_saliency_maps": true,
+  "sequential_cfg": false,
+  "visualize": false,
+  "save_separate_tiles": true
+}

@@ -1,0 +1,5 @@
+# Generated images, encoded prompts, and locally kept weights never go to git.
+outputs/
+prompt_cache/
+weights/
+__pycache__/
