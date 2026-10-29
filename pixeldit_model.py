@@ -793,7 +793,7 @@ class PixDiT_T2I(nn.Module):
         return x_img.view(B, S, self.out_channels, H, W)
 
 
-def load_pixeldit(device, dtype, weights_dir=None):
+def load_pixeldit(device, dtype, weights_dir=None, model_class=None):
     """
     Builds PixDiT_T2I from the released checkpoint.
 
@@ -809,6 +809,8 @@ def load_pixeldit(device, dtype, weights_dir=None):
         device: torch device to place the model on.
         dtype: model dtype (bfloat16 in the original inference).
         weights_dir: Path of a folder holding config.json and pixeldit_t2i_v1.pth, or None to download them.
+        model_class: the class to build, for a variant of the model that keeps the checkpoint's weight names
+            (baselines/regional_prompting); None builds PixDiT_T2I itself.
 
     Returns:
         (model in eval mode, repository config dict; its "scheduler" entry holds the flow shift).
@@ -827,7 +829,7 @@ def load_pixeldit(device, dtype, weights_dir=None):
                 raise FileNotFoundError(f"{paths[filename]} does not exist (expected {CHECKPOINT_REPO_ID}/{filename})")
     model_config = json.loads(paths[MODEL_CONFIG_FILENAME].read_text())
     with torch.device("meta"):
-        model = PixDiT_T2I(**{key: model_config[key] for key in ARCHITECTURE_KEYS})
+        model = (model_class or PixDiT_T2I)(**{key: model_config[key] for key in ARCHITECTURE_KEYS})
 
     checkpoint_path = paths[CHECKPOINT_FILENAME]
     checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=False, mmap=True)

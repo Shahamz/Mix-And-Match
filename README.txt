@@ -25,5 +25,12 @@ Requirements: a CUDA GPU (8 GB is enough with "sequential_cfg": true) and Python
     python generate.py configs/                          run every .json in a folder (results in outputs/configs/)
     python generate.py configs/template.json --std       plain PixelDiT with the background prompt only
 
+4. Baselines (same configs, same weights; results go to outputs/<baseline>/)
+    python -m baselines.mnm_baseline configs/template.json                      one plain image per tile prompt
+    python -m baselines.tiled_diffusion.run configs/template.json               tiled-diffusion, on PixelDiT
+    python -m baselines.regional_prompting.infer_pixeldit_regional configs/template.json   Regional Prompting
+
+   All three take --weights-dir as well. Run them from this folder, with -m, so their imports resolve.
+
    To make your own run, copy configs/template.json and edit the prompts, num_crops, tiles_per_crop, seed,
    cfg_scale and late_prompting. If the GPU runs out of memory, set "sequential_cfg": true or use fewer tiles.

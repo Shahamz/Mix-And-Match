@@ -14,3 +14,5 @@ huggingface_hub>=0.26       # weight downloads
 numpy>=1.26
 Pillow>=10.1                # ImageFont.load_default(size=...)
 PyMaxflow>=1.3.0            # alpha-expansion of the crop segmentation
+tqdm>=4.66                  # progress bar of the tiled-diffusion baseline
+matplotlib>=3.7             # only for the tiled-diffusion baseline's --show
